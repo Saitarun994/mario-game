@@ -42,6 +42,8 @@ export default class Enemy extends Phaser.Physics.Arcade.Sprite {
       this.direction *= -1;
       this.setVelocityX(PATROL_SPEED * this.direction);
     }
+
+    this.setFlipX(this.direction < 0);
   }
 
   defeat() {

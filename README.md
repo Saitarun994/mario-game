@@ -1,6 +1,20 @@
 # Super Mario Bros MVP
 
-A browser-based side-scrolling platformer built with **Phaser 3** and **Vite**. Run across a long level, collect coins, stomp enemies, and reach the flag to win. Sprites are simple colored placeholders; gameplay focuses on movement, collision, scoring, and level flow.
+A browser-based side-scrolling platformer built with **Phaser 3** and **Vite**. Run across a long level, collect coins, stomp enemies, and reach the flag to win. The player is a code-drawn plumber sprite and enemies are code-drawn mushroom walkers; coins and platforms still use simple colored placeholders.
+
+## Screenshots
+
+Gameplay with sunset background, coins, plumber, and mushroom walker:
+
+![Gameplay](media/gameplay.png)
+
+Player sprite:
+
+![Player plumber sprite](media/player.png)
+
+Enemy sprite:
+
+![Mushroom walker enemy](media/enemy.png)
 
 ## Implemented features
 
@@ -11,6 +25,8 @@ A browser-based side-scrolling platformer built with **Phaser 3** and **Vite**. 
 - **Double jump** — ground jump plus one mid-air jump; also includes coyote time, jump buffering, and variable jump height
 - **Win / lose flow** — touch the flag to win; lose by hitting an enemy from the side or falling off the level; press **R** on the result screen to restart
 - **Keyboard controls** — arrow keys or WASD to move; Up, W, or Space to jump
+- **Plumber player sprite** — original 32×32 pixel character (red cap, overalls, mustache) that faces left or right
+- **Mushroom walker enemies** — original 32×32 pixel enemies that face the direction they patrol
 - **Procedural sunset background** — gradient sky, sun, clouds, and parallax mountain layers drawn at runtime (no image files)
 
 ## Prerequisites
@@ -70,6 +86,10 @@ mario-game/
 ├── package.json
 ├── vite.config.js
 ├── README.md
+├── media/
+│   ├── gameplay.png
+│   ├── player.png
+│   └── enemy.png
 ├── tests/
 │   ├── level1.test.js
 │   └── sunsetBackground.test.js
@@ -79,7 +99,7 @@ mario-game/
     │   ├── gameConfig.js       # Canvas, physics, scene list
     │   └── level1.js           # Level width, platforms, coins, enemies, flag, spawn
     ├── scenes/
-    │   ├── BootScene.js        # Generates placeholder textures
+    │   ├── BootScene.js        # Generates plumber and mushroom-walker pixel sprites
     │   ├── GameScene.js        # Main gameplay loop
     │   └── GameOverScene.js    # Win/lose screen and restart
     ├── entities/
@@ -97,7 +117,7 @@ mario-game/
 ## Current limitations
 
 - **Single level only** — no level select or progression
-- **Placeholder graphics** — colored rectangles and circles, not sprite sheets or tilemaps
+- **Mixed graphics** — code-drawn pixel sprites for the player and enemies; coins and platforms are still colored rectangles and circles
 - **Keyboard only** — no touch or gamepad support
 - **No audio** — no sound effects or music
 - **No persistence** — scores reset when you restart or refresh the page
