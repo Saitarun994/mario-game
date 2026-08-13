@@ -1,0 +1,11 @@
+# Super Mario Bros MVP — dependency list
+# This is a Node.js project (not Python). Install with:
+#   npm install
+#
+# Requires: Node.js 18+ and npm
+
+# Runtime
+phaser@^3.80.0
+
+# Dev / build
+vite@^5.0.0
